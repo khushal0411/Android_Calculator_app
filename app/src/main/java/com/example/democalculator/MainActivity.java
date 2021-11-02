@@ -33,11 +33,11 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int addd;
-                int a1=0, b1=0,z=0;
+                float addd;
+                float a1=0, b1=0,z=0;
                 try {
-                    a1 = Integer.valueOf(Num1.getText().toString());
-                    b1 = Integer.valueOf(Num2.getText().toString());
+                    a1 = Float.parseFloat(Num1.getText().toString());
+                    b1 = Float.parseFloat(Num2.getText().toString());
                 }
                 catch (NumberFormatException e)
                 {
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                     if(z==0)
                     {
                         addd = a1 + b1;
-                    result.setText(Integer.toString(addd));}
+                    result.setText(Float.toString(addd));}
                     else {
                         result.setText("Invalid");
                     }
@@ -57,11 +57,11 @@ public class MainActivity extends AppCompatActivity {
         sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Integer addd;
-                int a1=0, b1=0,z=0;
+                float addd;
+                float a1=0, b1=0,z=0;
                 try {
-                    a1 = Integer.valueOf(Num1.getText().toString());
-                    b1 = Integer.valueOf(Num2.getText().toString());
+                    a1 = Float.parseFloat(Num1.getText().toString());
+                    b1 = Float.parseFloat(Num2.getText().toString());
                 }
                 catch (NumberFormatException e)
                 {
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 if(z==0)
                 {
                     addd = a1 - b1;
-                    result.setText(Integer.toString(addd));}
+                    result.setText(Float.toString(addd));}
                 else {
                     result.setText("Invalid");
                 }
@@ -82,11 +82,11 @@ public class MainActivity extends AppCompatActivity {
         mul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int addd;
-                int a1=0, b1=0,z=0;
+                float addd;
+                float a1=0, b1=0,z=0;
                 try {
-                    a1 = Integer.valueOf(Num1.getText().toString());
-                    b1 = Integer.valueOf(Num2.getText().toString());
+                    a1 = Float.parseFloat(Num1.getText().toString());
+                    b1 = Float.parseFloat(Num2.getText().toString());
                 }
                 catch (NumberFormatException e)
                 {
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 if(z==0)
                 {
                     addd = a1 * b1;
-                    result.setText(Integer.toString(addd));}
+                    result.setText(Float.toString(addd));}
                 else {
                     result.setText("Invalid");
                 }
@@ -106,11 +106,11 @@ public class MainActivity extends AppCompatActivity {
         div.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int addd=0;
-                int a1=0, b1=0,z=0;
+                float addd=0;
+                float a1=0, b1=0,z=0;
                 try {
-                    a1 = Integer.valueOf(Num1.getText().toString());
-                    b1 = Integer.valueOf(Num2.getText().toString());
+                    a1 = Float.parseFloat(Num1.getText().toString());
+                    b1 = Float.parseFloat(Num2.getText().toString());
                 }
                 catch (NumberFormatException e)
                 {
@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
                         z=1;
                     }
                     if(z==0){
-                        result.setText(Integer.toString(addd));
+                        result.setText(Float.toString(addd));
                     }
                     else {
                         result.setText("Number divided by 0, Re-enter number");
