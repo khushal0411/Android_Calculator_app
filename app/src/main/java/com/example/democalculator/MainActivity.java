@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                         result.setText(Integer.toString(addd));
                     }
                     else {
-                        result.setText("Number divided by 0");
+                        result.setText("Number divided by 0, Re-enter number");
                     }
 
                    }
