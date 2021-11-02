@@ -52,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
         mul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Integer addd;
-                Integer a1, b1;
+                int addd;
+                int a1, b1;
                 a1 = Integer.valueOf(Num1.getText().toString());
                 b1 = Integer.valueOf(Num2.getText().toString());
                 addd = a1 * b1;
