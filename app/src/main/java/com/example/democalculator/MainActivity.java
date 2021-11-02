@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                     addd = a1 * b1;
                     result.setText(Float.toString(addd));}
                 else {
-                    result.setText("Invalid");
+                    result.setText("Invalid Input");
                 }
 
 
