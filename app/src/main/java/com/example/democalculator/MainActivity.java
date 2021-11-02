@@ -1,6 +1,7 @@
 package com.example.democalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 
 import android.os.Bundle;
 import android.view.View;
@@ -18,57 +19,126 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        result = findViewById(R.id.result);
-        Num1 = findViewById(R.id.Num1);
-        Num2 = findViewById(R.id.Num2);
-        mul = findViewById(R.id.mul);
-        div = findViewById(R.id.div);
-        add = findViewById(R.id.add);
-        c = findViewById(R.id.clear);
-        sub = findViewById(R.id.sub);
+        result = findViewById(R.id.tv_Result);
+        Num1 = findViewById(R.id.edittext_Num1);
+        Num2 = findViewById(R.id.edittext_Num2);
+        mul = findViewById(R.id.button_mul);
+        div = findViewById(R.id.button_div);
+        add = findViewById(R.id.button_add);
+        c = findViewById(R.id.button_clear);
+        sub = findViewById(R.id.button_sub);
+
+
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int addd;
-                int a1, b1;
-                a1 = Integer.valueOf(Num1.getText().toString());
-                b1 = Integer.valueOf(Num2.getText().toString());
-                addd = a1 + b1;
-                result.setText(Integer.toString(addd));
+                int a1=0, b1=0,z=0;
+                try {
+                    a1 = Integer.valueOf(Num1.getText().toString());
+                    b1 = Integer.valueOf(Num2.getText().toString());
+                }
+                catch (NumberFormatException e)
+                {
+                    z=1;
+                }
+                    if(z==0)
+                    {
+                        addd = a1 + b1;
+                    result.setText(Integer.toString(addd));}
+                    else {
+                        result.setText("Invalid");
+                    }
+
+
             }
         });
         sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Integer addd;
-                Integer a1, b1;
-                a1 = Integer.valueOf(Num1.getText().toString());
-                b1 = Integer.valueOf(Num2.getText().toString());
-                addd = a1 - b1;
-                result.setText(Integer.toString(addd));
+                int a1=0, b1=0,z=0;
+                try {
+                    a1 = Integer.valueOf(Num1.getText().toString());
+                    b1 = Integer.valueOf(Num2.getText().toString());
+                }
+                catch (NumberFormatException e)
+                {
+                    z=1;
+                }
+                if(z==0)
+                {
+                    addd = a1 - b1;
+                    result.setText(Integer.toString(addd));}
+                else {
+                    result.setText("Invalid");
+                }
+
+
+
             }
         });
         mul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int addd;
-                int a1, b1;
-                a1 = Integer.valueOf(Num1.getText().toString());
-                b1 = Integer.valueOf(Num2.getText().toString());
-                addd = a1 * b1;
-                result.setText(Integer.toString(addd));
+                int a1=0, b1=0,z=0;
+                try {
+                    a1 = Integer.valueOf(Num1.getText().toString());
+                    b1 = Integer.valueOf(Num2.getText().toString());
+                }
+                catch (NumberFormatException e)
+                {
+                    z=1;
+                }
+                if(z==0)
+                {
+                    addd = a1 * b1;
+                    result.setText(Integer.toString(addd));}
+                else {
+                    result.setText("Invalid");
+                }
+
+
             }
         });
         div.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int addd;
-                int a1, b1;
-                a1 = Integer.valueOf(Num1.getText().toString());
-                b1 = Integer.valueOf(Num2.getText().toString());
-                addd = a1 / b1;
-                result.setText(Integer.toString(addd));
+                int addd=0;
+                int a1=0, b1=0,z=0;
+                try {
+                    a1 = Integer.valueOf(Num1.getText().toString());
+                    b1 = Integer.valueOf(Num2.getText().toString());
+                }
+                catch (NumberFormatException e)
+                {
+                    z=1;
+                }
+
+                if(z==0)
+                {
+                    try {
+                        addd = a1 / b1;
+                    }
+                    catch (ArithmeticException e)
+                    {
+                        z=1;
+                    }
+                    if(z==0){
+                        result.setText(Integer.toString(addd));
+                    }
+                    else {
+                        result.setText("Number divided by 0");
+                    }
+
+                   }
+                else {
+                    result.setText("Invalid");
+                }
+
+
             }
         });
         c.setOnClickListener(new View.OnClickListener() {
@@ -79,4 +149,6 @@ public class MainActivity extends AppCompatActivity {
                 result.setText(" ");
             }
         });
-    }}
+    }
+
+}
